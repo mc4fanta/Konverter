@@ -19,47 +19,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void buildView() {
-        addEuro();
-        addNamibiaDollar();
-        addPhillipinePeso();
-    }
-
-
-    /**
-     * add euro to currencies and set text watcher
-     */
-    private void addEuro() {
-        EditText euro = findViewById(R.id.euro);
-        CurrencyWatcher euroWatcher = new CurrencyWatcher(ECurrency.EURO, currencies);
-        Currency currency = new Currency(ECurrency.EURO, euro, euroWatcher);
-        currencies.add(currency);
-
-        euro.addTextChangedListener(euroWatcher);
+        addCurrency((EditText) findViewById(R.id.euro), ECurrency.EURO); // euro
+        addCurrency((EditText) findViewById(R.id.namibia_dollar), ECurrency.NAD); // namibia dollar
+        addCurrency((EditText) findViewById(R.id.philippine_peso), ECurrency.PHP); // philippines peso
+        addCurrency((EditText) findViewById(R.id.dong), ECurrency.VND); // philippines peso
     }
 
     /**
-     * add php to currencies and set text watcher
+     * add currency and set text watcher
      */
-    private void addPhillipinePeso() {
-        EditText php = findViewById(R.id.philippine_peso);
-        CurrencyWatcher phpWatcher = new CurrencyWatcher(ECurrency.PHP, currencies);
-        Currency currency = new Currency(ECurrency.PHP, php, phpWatcher);
+    private void addCurrency(EditText field, ECurrency eCurrency) {
+        CurrencyWatcher watcher = new CurrencyWatcher(eCurrency, currencies);
+        Currency currency = new Currency(eCurrency, field, watcher);
         currencies.add(currency);
 
-        php.addTextChangedListener(phpWatcher);
+        field.addTextChangedListener(watcher);
     }
-
-    /**
-     * add nad to currencies and set text watcher
-     */
-    private void addNamibiaDollar() {
-        EditText nad = findViewById(R.id.namibia_dollar);
-        CurrencyWatcher nadWatcher = new CurrencyWatcher(ECurrency.NAD, currencies);
-        Currency currency = new Currency(ECurrency.NAD, nad, nadWatcher);
-        currencies.add(currency);
-
-        nad.addTextChangedListener(nadWatcher);
-    }
-
-
 }

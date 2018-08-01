@@ -14,12 +14,6 @@ public class Currency {
         this.watcher = watcher;
     }
 
-    /**
-     * convert chosen currency to new one
-     */
-    public double calc(double value, ECurrency convertCurrency) {
-        return (value / getConversion(convertCurrency) * getConversion(getECurrency()));
-    }
 
     public CurrencyWatcher getWatcher() {
         return watcher;
@@ -32,6 +26,15 @@ public class Currency {
     public ECurrency getECurrency() {
         return eCurrency;
     }
+
+
+    /**
+     * convert chosen currency to new one
+     */
+    public double calc(double value, ECurrency convertCurrency) {
+        return (value / getConversion(convertCurrency) * getConversion(getECurrency()));
+    }
+
 
     /**
      * relation between ENUM and Interface to get conversion factor
@@ -46,6 +49,7 @@ public class Currency {
             case EURO: result = ICurrency.EURO; break;
             case PHP: result = ICurrency.PHP; break;
             case NAD: result = ICurrency.NAD; break;
+            case VND: result = ICurrency.VND; break;
         }
 
         return result;
