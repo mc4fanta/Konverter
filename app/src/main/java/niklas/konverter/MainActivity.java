@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Currency> currencies = new ArrayList<Currency>();
+    private ArrayList<Currency> currencies = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +19,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void buildView() {
-        showEuro();
-        showPhillipinesPeso();
+        addEuro();
+        addPhillipinePeso();
     }
 
 
-    private void showEuro() {
+    /**
+     * add euro to currencies and set text watcher
+     */
+    private void addEuro() {
         EditText euro = findViewById(R.id.euro);
         CurrencyWatcher euroWatcher = new CurrencyWatcher(ECurrency.EURO, currencies);
         Currency currency = new Currency(ECurrency.EURO, euro, euroWatcher);
@@ -33,8 +36,11 @@ public class MainActivity extends AppCompatActivity {
         euro.addTextChangedListener(euroWatcher);
     }
 
-    private void showPhillipinesPeso() {
-        EditText php = findViewById(R.id.philippines_peso);
+    /**
+     * add php to currencies and set text watcher
+     */
+    private void addPhillipinePeso() {
+        EditText php = findViewById(R.id.philippine_peso);
         CurrencyWatcher phpWatcher = new CurrencyWatcher(ECurrency.PHP, currencies);
         Currency currency = new Currency(ECurrency.PHP, php, phpWatcher);
         currencies.add(currency);

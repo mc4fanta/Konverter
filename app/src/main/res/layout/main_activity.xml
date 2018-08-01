@@ -19,14 +19,14 @@
         android:digits="0123456789,." />
 
 
-    <!-- Philippinischer Peso -->
+    <!-- Philippine Peso -->
     <TextView
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:text="@string/philippines_peso" />
+        android:text="@string/philippine_peso" />
     <EditText
-        android:id="@+id/philippines_peso"
+        android:id="@+id/philippine_peso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:digits="0123456789,." />
