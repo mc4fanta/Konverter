@@ -19,6 +19,19 @@
         android:digits="0123456789,." />
 
 
+    <!-- Namibia Dollar -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:text="@string/namibia_dollar" />
+    <EditText
+        android:id="@+id/namibia_dollar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:digits="0123456789,." />
+
+
     <!-- Philippine Peso -->
     <TextView
         android:layout_width="match_parent"

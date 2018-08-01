@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void buildView() {
         addEuro();
+        addNamibiaDollar();
         addPhillipinePeso();
     }
 
@@ -47,4 +48,18 @@ public class MainActivity extends AppCompatActivity {
 
         php.addTextChangedListener(phpWatcher);
     }
+
+    /**
+     * add nad to currencies and set text watcher
+     */
+    private void addNamibiaDollar() {
+        EditText nad = findViewById(R.id.namibia_dollar);
+        CurrencyWatcher nadWatcher = new CurrencyWatcher(ECurrency.NAD, currencies);
+        Currency currency = new Currency(ECurrency.NAD, nad, nadWatcher);
+        currencies.add(currency);
+
+        nad.addTextChangedListener(nadWatcher);
+    }
+
+
 }

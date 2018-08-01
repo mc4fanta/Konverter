@@ -45,6 +45,7 @@ public class Currency {
         switch (enumCurrency) {
             case EURO: result = ICurrency.EURO; break;
             case PHP: result = ICurrency.PHP; break;
+            case NAD: result = ICurrency.NAD; break;
         }
 
         return result;
