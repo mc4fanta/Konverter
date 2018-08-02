@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         addCurrency((EditText) findViewById(R.id.namibia_dollar), ECurrency.NAD); // namibia dollar
         addCurrency((EditText) findViewById(R.id.philippine_peso), ECurrency.PHP); // philippines peso
         addCurrency((EditText) findViewById(R.id.dong), ECurrency.VND); // philippines peso
+        addCurrency((EditText) findViewById(R.id.us_dollar), ECurrency.USD); // US Dollar
     }
 
     /**

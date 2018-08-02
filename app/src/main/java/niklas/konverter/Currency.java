@@ -50,6 +50,7 @@ public class Currency {
             case PHP: result = ICurrency.PHP; break;
             case NAD: result = ICurrency.NAD; break;
             case VND: result = ICurrency.VND; break;
+            case USD: result = ICurrency.USD; break;
         }
 
         return result;

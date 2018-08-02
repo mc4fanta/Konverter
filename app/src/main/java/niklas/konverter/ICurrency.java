@@ -9,4 +9,5 @@ public interface ICurrency {
     double PHP = 61.84;
     double NAD = 15.368;
     double VND = 27220.10;
+    double USD = 1.17;
 }
